@@ -1,0 +1,14 @@
+# RockBed
+
+**Test Suite for Pebble apps and watchfaces**
+
+## Usage
+
+To use RockBed to add unit tests to your Pebble app or watchface, you will need
+to follow these steps:
+
+1. Create a `tests` folder and copy the contents of `dist/tests/` into it.
+2. Add Makefile to run tests. You can use `dist/Makefile` as a starting point.
+3. Use the comments in your new Makefile to work out what you need to fill out.
+4. Run `./tests/scripts/local-install.sh PEBBLE_DIR` where `PEBBLE_DIR` is the location of your Pebble SDK folder.
+5. Check that everything is okay by running `make test`. If no errors appear, you can start writing your tests!
