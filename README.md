@@ -1,8 +1,8 @@
 # RockBed
 
-[![Tests Status](https://img.shields.io/travis/smallstoneapps/rockbed.svg?style=flat-square&label=tests)][travis] ![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue.svg?style=flat-square)
+Test Suite for Pebble apps and watchfaces.
 
-**Test Suite for Pebble apps and watchfaces**
+[![Tests Status](https://img.shields.io/travis/smallstoneapps/rockbed.svg?style=flat-square&label=tests)][travis] ![Github Release](https://img.shields.io/github/release/smallstoneapps/rockbed.svg?style=flat-square)
 
 ## Usage
 
