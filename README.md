@@ -1,5 +1,7 @@
 # RockBed
 
+[![Tests Status](https://img.shields.io/travis/smallstoneapps/rockbed.svg?style=flat-square&label=tests)][travis] ![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue.svg?style=flat-square)
+
 **Test Suite for Pebble apps and watchfaces**
 
 ## Usage
@@ -12,3 +14,5 @@ to follow these steps:
 3. Use the comments in your new Makefile to work out what you need to fill out.
 4. Run `./tests/scripts/local-install.sh PEBBLE_DIR` where `PEBBLE_DIR` is the location of your Pebble SDK folder.
 5. Check that everything is okay by running `make test`. If no errors appear, you can start writing your tests!
+
+[travis]: https://travis-ci.org/smallstoneapps/rockbed/
