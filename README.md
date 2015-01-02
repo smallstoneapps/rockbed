@@ -2,7 +2,7 @@
 
 Test Suite for Pebble apps and watchfaces.
 
-[![Tests Status](https://img.shields.io/travis/smallstoneapps/rockbed.svg?style=flat-square&label=tests)][travis] ![Github Release](https://img.shields.io/github/release/smallstoneapps/rockbed.svg?style=flat-square)
+[![Tests Status](https://img.shields.io/travis/smallstoneapps/rockbed.svg?style=flat-square&label=tests)][travis] ![Github Release](https://img.shields.io/github/release/smallstoneapps/rockbed.svg?style=flat-square) [![MIT License](https://img.shields.io/badge/license-MIT-red.svg?style=flat-square)](./LICENSE)
 
 ## Usage
 
