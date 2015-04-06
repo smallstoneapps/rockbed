@@ -1,6 +1,6 @@
 /*
 
-RockBed v1.0.0
+RockBed v1.1.0
 A suite and methdology for creating Pebble app unit tests.
 http://smallstoneapps.github.io/rockbed/
 

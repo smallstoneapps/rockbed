@@ -1,6 +1,6 @@
 /*
 
-RockBed v1.0.0
+RockBed v1.1.0
 A Pebble library for doing unit tests.
 http://smallstoneapps.github.io/rockbed/
 

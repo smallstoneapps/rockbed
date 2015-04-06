@@ -1,5 +1,5 @@
 #
-# RockBed v1.0.0
+# RockBed v1.1.0
 # A suite and methdology for creating Pebble app unit tests.
 # http://smallstoneapps.github.io/rockbed/
 #
@@ -32,12 +32,19 @@
 # tests/scripts/local-setup.sh
 #
 
-SDK_INCLUDE_FOLDER=$1/Pebble/include
+SDK_INCLUDE_FOLDER_APLITE=$1/Pebble/aplite/include
+SDK_INCLUDE_FOLDER_BASALT=$1/Pebble/basalt/include
 INCLUDE_FOLDER=tests/include
 SRC_FOLDER=tests/src
 
-mkdir -p $INCLUDE_FOLDER
+mkdir -p $INCLUDE_FOLDER/aplite
+mkdir -p $INCLUDE_FOLDER/basalt
 mkdir -p $SRC_FOLDER
-cp $SDK_INCLUDE_FOLDER/*.h $INCLUDE_FOLDER
-echo '' > $INCLUDE_FOLDER/pebble_warn_unsupported_functions.h
+cp $SDK_INCLUDE_FOLDER_APLITE/*.h $INCLUDE_FOLDER/aplite
+cp $SDK_INCLUDE_FOLDER_BASALT/*.h $INCLUDE_FOLDER/basalt
+echo '' > $INCLUDE_FOLDER/aplite/pebble_warn_unsupported_functions.h
+echo '' > $INCLUDE_FOLDER/basalt/pebble_warn_unsupported_functions.h
+echo 'typedef int time_t;' > $INCLUDE_FOLDER/basalt/time.h
+echo '#define PBL_PLATFORM_BASALT\n#define PBL_COLOR' > $INCLUDE_FOLDER/basalt/defines.h
+echo '#define PBL_PLATFORM_APLITE\n#define PBL_BW' > $INCLUDE_FOLDER/aplite/defines.h
 touch $SRC_FOLDER/resource_ids.auto.h

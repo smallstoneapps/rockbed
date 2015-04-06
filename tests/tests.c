@@ -1,6 +1,6 @@
 /*
 
-RockBed v1.0.0
+RockBed v1.1.0
 A Pebble library for doing unit tests.
 http://smallstoneapps.github.io/rockbed/
 
@@ -36,10 +36,11 @@ tests/tests.c
 
 #include <pebble.h>
 #include <pebble_extra.h>
+#include <defines.h>
 
 #include "unit.h"
 
-#define VERSION_LABEL "1.0.0"
+#define VERSION_LABEL "1.1.0"
 
 // Keep track of how many tests have run, and how many have passed.
 int tests_run = 0;
@@ -134,6 +135,7 @@ static char* test_data_single(void) {
   return 0;
 }
 
+#ifdef PBL_PLATFORM_BASALT
 static char* test_delete(void) {
   persist_write_int(1, 7484);
   bool pass = (true == persist_exists(1));
@@ -142,6 +144,7 @@ static char* test_delete(void) {
   mu_assert(pass, "Deleted key still exists.");
   return 0;
 }
+#endif
 
 static char* all_tests() {
   mu_run_test(test_exists_fail);
@@ -151,14 +154,16 @@ static char* all_tests() {
   mu_run_test(test_string_single);
   mu_run_test(test_string_multiple);
   mu_run_test(test_data_single);
+  #ifdef PBL_PLATFORM_BASALT
   mu_run_test(test_delete);
+  #endif
   return 0;
 }
 
 int main(int argc, char **argv) {
-  printf("%s----------------------------------\n", KCYN);
-  printf(" Running RockBed %s Test Suite \n", VERSION_LABEL);
-  printf("----------------------------------\n%s", KNRM);
+  printf("%s--------------------------------------------\n", KCYN);
+  printf(" Running RockBed %s Test Suite for %s \n", VERSION_LABEL, argv[1]);
+  printf("--------------------------------------------\n%s", KNRM);
   char* result = all_tests();
   if (0 != result) {
     printf("%s - Failed Test:%s %s\n", KRED, KNRM, result);
@@ -166,6 +171,6 @@ int main(int argc, char **argv) {
   printf(" - Tests Run: %s%d%s\n", (tests_run == tests_passed) ? KGRN : KRED, tests_run, KNRM);
   printf(" - Tests Passed: %s%d%s\n", (tests_run == tests_passed) ? KGRN : KRED, tests_passed, KNRM);
 
-  printf("%s----------------------------------%s\n", KCYN, KNRM);
+  printf("%s--------------------------------------------%s\n", KCYN, KNRM);
   return result != 0;
 }
